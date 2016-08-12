@@ -1,0 +1,39 @@
+{
+  "builders":
+  [
+    {
+      "type": "docker",
+      "image": "openjdk:8u102-jdk",
+      "commit": true
+    }
+  ],
+  "provisioners": [
+    {
+      "type" : "file",
+      "source": "./install.sh",
+      "destination": "/opt/install.sh"
+    },
+    {
+      "type" : "shell",
+      "inline" : [
+        "chmod +x /opt/install.sh"
+      ]
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "type": "docker-tag",
+        "repository": "advantageous/run-java-zip",
+        "tag": "0.1"
+      },
+      {
+        "type": "docker-tag",
+        "repository": "advantageous/run-java-zip",
+        "tag": "latest"
+      },
+      "docker-push"
+    ]
+  ]
+
+}
