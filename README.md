@@ -1,3 +1,12 @@
+## Docker Java RunZip
+Allows you to easily run a Java zip dist file that was built with `gradle distZip`.
+
+Deployed at [dockerhub advantageous/run-java-zip](https://hub.docker.com/r/advantageous/run-java-zip/).
+Source code at [github](https://github.com/advantageous/docker-java-runzip/).
+
+Written by Rick Hightower.
+
+
 ## Overview
 If you set two environment variables, `JAVA_ZIP_LOCATION` and `JAVA_RUN_COMMAND`
 this image will download the zip file at `JAVA_ZIP_LOCATION` and then run the command
